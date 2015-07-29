@@ -1,0 +1,8 @@
+--alter uid field
+
+ALTER TABLE `actor` CHANGE COLUMN `uid` `uid` VARCHAR(256) NULL DEFAULT NULL  ;
+
+
+--//@UNDO
+
+ALTER TABLE `actor` CHANGE COLUMN `uid` `uid` VARCHAR(32) NULL DEFAULT NULL  ;

@@ -1,0 +1,15 @@
+<assembly>
+	<id>nonregressiontest</id>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<formats>
+		<format>zip</format>
+		<format>jar</format>
+	</formats>
+	<fileSets>
+		<fileSet>
+			<directory>src/nonregressiontest/resources</directory>
+			<outputDirectory>/</outputDirectory>
+			<fileMode>700</fileMode>
+		</fileSet>
+	</fileSets>
+</assembly>
