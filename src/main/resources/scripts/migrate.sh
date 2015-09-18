@@ -76,7 +76,7 @@ then
 fi
 
 CLASSPATH=$CLASSPATH_PREFIX:"$BASEDIR"/etc:"$REPO"/mybatis-3.2.4.jar:"$REPO"/mybatis-migrations-3.2.0.jar
-EXTRA_JVM_ARGUMENTS="-Xms500m -Xmx500m -XX:PermSize=128m -XX:-UseGCOverheadLimit"
+EXTRA_JVM_ARGUMENTS="-Xms500m -Xmx500m -XX:-UseGCOverheadLimit"
 
 # For Cygwin, switch paths to Windows format before running java
 if $cygwin; then
