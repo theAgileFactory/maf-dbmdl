@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.agifac.maf</groupId>
 	<artifactId>maf-dbmdl</artifactId>
-	<version>8.0.0</version>
+	<version>8.0.1-SNAPSHOT</version>
 	<name>Component "maf-dbmdl", of scope "com.agifac.maf"</name>
 	<description>This is the component that create the database tables for the maf-desktop entities</description>
 	<packaging>pom</packaging>
