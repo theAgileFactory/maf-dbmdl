@@ -2,9 +2,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.agifac.maf</groupId>
 	<artifactId>maf-dbmdl</artifactId>
-	<version>7.0.1-SNAPSHOT</version>
-	<name>Automatic database incremental management for the BizDock application</name>
-	<description>This component contains the SQL scripts which are managing the BizDock database evolutions</description>
+	<version>8.0.1-SNAPSHOT</version>
+	<name>Component "maf-dbmdl", of scope "com.agifac.maf"</name>
+	<description>This is the component that create the database tables for the maf-desktop entities</description>
 	<packaging>pom</packaging>
 	<url>https://prod.the-agile-factory.net/site/${project.groupId}/${project.artifactId}-${project.version}</url>
 	<organization>
