@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.agifac.maf</groupId>
 	<artifactId>maf-dbmdl</artifactId>
-	<version>8.0.1-SNAPSHOT</version>
+	<version>9.0.0</version>
 	<name>Component "maf-dbmdl", of scope "com.agifac.maf"</name>
 	<description>This is the component that create the database tables for the maf-desktop entities</description>
 	<packaging>pom</packaging>
@@ -16,7 +16,8 @@
                 <connection>scm:git:https://github.com/theAgileFactory/maf-dbmdl.git</connection>
                 <developerConnection>scm:git:https://github.com/theAgileFactory/maf-dbmdl.git</developerConnection>
                 <url>scm:git:https://github.com/theAgileFactory/maf-dbmdl.git</url>
-        </scm>
+          <tag>maf-dbmdl-9.0.0</tag>
+  </scm>
 	
 	<ciManagement>
 		<system>jenkins</system>
