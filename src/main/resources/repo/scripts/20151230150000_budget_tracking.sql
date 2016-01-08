@@ -22,7 +22,7 @@ INSERT INTO `custom_attribute_definition`
 VALUES
 (
 'java.lang.Object',
-'default.value=true',
+'default.value=false',
 'BOOLEAN',
 'BUDGET_TRACKING_EFFORT_BASED_PREFERENCE',
 'preference.budget_tracking_effort_based_preference.name',
