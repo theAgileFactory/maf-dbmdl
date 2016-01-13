@@ -29,7 +29,7 @@ CREATE  TABLE IF NOT EXISTS `dashboard_widget` (
   INDEX `fk_dashboard_widget_dashboard_page1_idx` (`dashboard_page_id` ASC) ,
   CONSTRAINT `fk_dashboard_widget_dashboard_page1`
     FOREIGN KEY (`dashboard_page_id` )
-    REFERENCES `maf`.`dashboard_page` (`id` )
+    REFERENCES `dashboard_page` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
