@@ -101,7 +101,7 @@ CREATE TABLE `currency` (
   UNIQUE KEY `code_UNIQUE` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
-INSERT INTO `currency` VALUES (1,0,1,'CHF',1,1.00,'Fr.'),(2,0,0,'USD',0,0.90,'$'),(3,0,0,'EUR',0,1.22,'€'),(4,0,0,'JPY',0,0.01,'¥'),(5,0,0,'GBP',0,1.50,'£'),(6,0,0,'CAD',0,0.82,'$');
+INSERT INTO `currency` VALUES (1,0,1,'CHF',1,1.00,'Fr.'),(2,0,0,'USD',0,1.00,'$'),(3,0,0,'EUR',0,1.00,'€'),(4,0,0,'JPY',0,1.00,'¥'),(5,0,0,'GBP',0,1.00,'£'),(6,0,0,'CAD',0,1.00,'$');
 
 CREATE TABLE `currency_conversions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
