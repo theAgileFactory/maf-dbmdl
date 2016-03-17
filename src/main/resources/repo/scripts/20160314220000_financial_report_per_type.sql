@@ -178,8 +178,8 @@ INSERT INTO `reporting` (`deleted`, `last_update`, `reporting_category_id`, `rep
   VALUES (
     '0', 
     NOW(),
-    (SELECT `id` FROM `maf`.`reporting_category` WHERE `name`='reporting_category.default.name'), 
-    (SELECT `id` FROM `maf`.`reporting_authorization` WHERE `expression`='report.financial_per_type'),
+    (SELECT `id` FROM `reporting_category` WHERE `name`='reporting_category.default.name'), 
+    (SELECT `id` FROM `reporting_authorization` WHERE `expression`='report.financial_per_type'),
     'report.financial_per_type.name', 
     'report.financial_per_type.description', 
     '0', 
@@ -190,9 +190,9 @@ INSERT INTO `reporting` (`deleted`, `last_update`, `reporting_category_id`, `rep
     'PDF,EXCEL,CSV');
 
 #the DB translations are only for custom reports (in standard reports they are included in the messages files)
-INSERT INTO `maf`.`i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.name', 'en', 'Financial status by budget types');
-INSERT INTO `maf`.`i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.name', 'fr', 'Statuts financiers par types de budgets');
-INSERT INTO `maf`.`i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.name', 'de', 'Finanzstatus von Budgetarten ');
-INSERT INTO `maf`.`i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.description', 'en', 'Financial status by budget types');
-INSERT INTO `maf`.`i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.description', 'fr', 'Statuts financiers par types de budgets');
-INSERT INTO `maf`.`i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.description', 'de', 'Finanzstatus von Budgetarten ');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.name', 'en', 'Financial status by budget types');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.name', 'fr', 'Statuts financiers par types de budgets');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.name', 'de', 'Finanzstatus von Budgetarten ');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.description', 'en', 'Financial status by budget types');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.description', 'fr', 'Statuts financiers par types de budgets');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.financial_per_type.description', 'de', 'Finanzstatus von Budgetarten ');
