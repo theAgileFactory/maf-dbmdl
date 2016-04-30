@@ -1,18 +1,50 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
+env:
+  global:
+  - ACTIVATOR_VERSION=1.3.7
+  - ACTIVATOR_ZIP_FILE=typesafe-activator-${ACTIVATOR_VERSION}-minimal.zip
+  - ACTIVATOR_ZIP_URL=http://downloads.typesafe.com/typesafe-activator/${ACTIVATOR_VERSION}/${ACTIVATOR_ZIP_FILE}
+  - PLAY2_HOME=${TRAVIS_BUILD_DIR}/activator-${ACTIVATOR_VERSION}-minimal
+  - SBT_EXECUTABLE_NAME=activator
+  - GH_REF=github.com/theAgileFactory/maf-dbmdl
+  - secure: dkX9h4rjGy9NbkJCbGPrt/zR3Xxfj8MsaKoBL9yV1kMAJH7+6r4TFtYccFNXk4iyn3UpV9ItvZ+tXTaXHrVGW6fb6aTGF9KY+CpPDb4ObE/uiFN4iEn0D/T0vOdZWy7ynH2341wytmrVMb6plzOOFUykIvCxQDqRT/J6vgxA+kuaD7bN7W7bCuTruSSDH5HIlaNOj6LeSBf4jFJ8zg7BoRyW5SlV9o9OKB1gBGeOO2YNSYUcXL6wKmOmv1v0cQNeMesbNXjZSQHGilRjM84QriCURQqrgLoSt0MAZte+H8q9iKaGlY4/VKVNdWyQAnA6RUt2nbF6JCZhfcegQj6NkGXE+Vzkom0Lw7kEIT9Lk6rLpjYDbrq24cfy2Dey4aPzfn/34v2GbKebiP6X7eAHpfuMU5qXf/Q4nnHgwScL9N5kMRgJRr500jwbMPNRrGU+6ufkskvWMoapZToj19Ohc/V1bzhnSyKhH8K4g/lB23mUgqM1g2i9N0k8YR5ceR25+yUYGd2VDrL3t+uVfm3Om4jjSupR9SU+t708sa0UksAYPjHG0rv02Mc89cbyNVTRUbKotgjii2h2lc1/bjvNSNRob+2a9u9jt3RCc+tnVw5JqW38nDsWJpr2M9I59nxbrWpVpwQZj22Dw+p3aXj6sDQCva+qlvaAPtI/3BuBJ1I=
+  - secure: AhuBMsWoxLdHzGWgmKEwiD1HV2i6xvmAd0hDWu+ky+5afBxYWOXGSMLBykLKXriJxPbXpGueYmVZGstZUU5iQhxNN3gEPIsRh7U0bKaOvHL46JotRnGsKOUGzbpIIMRs98fydjQQ++xAL5KWSbrDnyj7VDwfgtf1luNkshePMKeATrtauE+G+f8tXKTOwD8VzIf+4lOKFSxTiPleMWp1izuxmRLpt7xSpoTyefhalGkDr5VsL7dK/NIo91Cv6c8Khrm+7+FIduXpJiuioZXzvZeIaeDLoUpA+6UXMVwVNXYK5BREZikTTzjwRRGjB6LdrpwyrpuMPFA/IvY8sbGq/mV9OVzp5OX0pkWy1C1Xl8HNC6tNepNG+QIZOQTs5Spgi6WMOiMv1m4a/kmsuctUZBzAcPOye3m3jJb9yd3EBPKQBRIdhjzb7VT0iRrE6h7kVTQ6voNixjk0POuutcmFNtkVCGXF4xikhp+h4Hk9UVI/P7YzKXq7iATHYnVXA1SbtntJonjiquo73eC400/LtkHA/R2/ZOB5XgFBStyemPRuOwcZmnd9ced+o06qlOZrdGJyT1Wbdju1xV7QO84jUrnxaFKJUAcQ3X66bdOE+VIgbMPGZJxZTMIaRAvISQqS3xih3Ex2AsWx2V2h68P8xgZbkMWQx9eI5/IMnPd+53k=
+  - secure: cRH9SX5YiZtkRGDlBJwPfuyViRY5z15e0jmG+19MtdRIxStUBquzTHWZiZIA6hzKWJaLc+K+KRnklH1W9tmTDmRaTeqb00HQEdEBr1xz577N9Y3iV8M4MSMAnoUDBs23D5RYt3wM/H6t1kqSpBdUxCnU1M5I5nvUH8/QTypOuDp84HMhEDwnVKvreWlntHR2WmlOtWa9KadZCGmU9HVBF+CLueGVBxddgc4WnKo8b4cWw6uCa9CH1nuGeXiyIqpBmPs/NRlRSjTXlhERnU/JDHMsKA+HGEFl0i7kp/ptWTpT9lWXHCALEZNgRaA8bJeGDHiE7HyQb5vHMbOmYg60auAkvpsMGFhcffV4C1U9Hmpa3W8OzGwz6NvHaIhWds2Kd8q8hZZ8ENncHUd9TMyEz0OD701LP2Em3rG7Tv92AtFrSe8J99oNhNoKGGitAOXdi8eoEgio1lMd+AT+K5qmLuy+esseQLjcrM03Xgb8ds3byuZ/iGTb/THO0X8oDHG8BrsFfzu7bGmNmtlWLQd0YOGooJGTRTNlnPDlhN/iDPnfcZLEdcHzqmo6ucZcmf9PNCede4xy1rRsByEnou89Mr7OpNHwGZlJ0+JL7/yaN36y+Tb/R0XWt0ZBvikCvHwS9YYSOSBIuaAGmKrwjlQ7DE2/H0jYVPh3K+y5v3B9ufw=
+  - secure: U5eaZky4goI5N+Ohb+qN1keuiB9D79GFBua5svpy11HJVefMzRIdq5SnJISLlEbBYfhUoycAoUAVrRf3WKCkHv588frxzE6FSQ+n3KulfgcToNs8Q+NDkxm4skQq2W5I9awJwtq1K/HBCAlpIB/jC3FxAt62EMH/s45P29mZiLFtchsxplmhLStLGYI3YleYczOtt6pgOOVkKzGXb23mbTMmNBylDG7wrru+OrBJxX8b6FjjJxuqyGF5iaJm7LFc3MEDlOGwhw8H7B4dIV+eelZkGVYMvMInv+mYW++dg3cHMF1SVPCZ2mHATzqZmHeLjYZxR4wUHfFn0B4FRkrJlmWcHMbvkFq6ZCdLGb0COujJXu61JcxE1QtC3v+Yzr6wh//Q4DMcM7R/OFgnPbf+CLcX9kvBRKxFlZhXcS683VDWfYpIdymwyWfmu5pPPJ3aoRUIkzAqLYyT1LfJNLfpWo2RWDDJqbRtgOfSuI9EClm2QZ45iROZxa0Q6sG3lbmf1d6offaYYIMc/FG6fVBey856/uf+rFvjDSQ8B/eyo7QdL2tgqzY8kPjkrWTV3UsfXGYAuR4t84CsVIEhgPEB3C9gFLO/H4EHsXw5PsaCKr734VyhSXQx24XXCkrfkRAGm0KyoRArcbCu/Bh/Jfd50NmsDrgHXgohCaaRzNgukFU=
+before_install:
+- sudo apt-get update
+- sudo apt-get install --only-upgrade -y oracle-java8-installer
+- mkdir -p ~/.gnupg
+- openssl aes-256-cbc -pass pass:$ENCRYPTION_PASSWORD -in secring.gpg.enc -out ~/.gnupg/secring.gpg
+  -d
+- openssl aes-256-cbc -pass pass:$ENCRYPTION_PASSWORD -in pubring.gpg.enc -out ~/.gnupg/pubring.gpg
+  -d
+- echo "<settings><servers><server><id>ossrh</id><username>\${OSSRH_JIRA_USERNAME}</username><password>\${OSSRH_JIRA_PASSWORD}</password></server></servers></settings>"
+  > ~/.m2/settings.xml
+install:
+- wget ${ACTIVATOR_ZIP_URL}
+- unzip -q ${ACTIVATOR_ZIP_FILE}
 script:
-  - mvn clean install
+- mvn -f pom2.xml clean install gpg:sign -Dgpg.passphrase="${GPG_PASSPHRASE}" --settings
+  ~/.m2/settings.xml
+after_success:
+- .travis/deploy.sh
+after_script:
+- rm ~/.gnupg/secring.gpg
+- rm ~/.gnupg/pubring.gpg
+- rm ~/.m2/settings.xml
 notifications:
-  email: false
+  email: true
 branches:
   only:
   - master
 scala:
-   - 2.11.1
+- 2.11.8
 cache:
   directories:
   - .autoconf
-  - $HOME/.m2
-  - $HOME/.sbt
-  - $HOME/.ivy
+  - ~/.m2
+  - ~/.sbt
+  - ~/.ivy
