@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/theAgileFactory/maf-dbmdl.svg?branch=master)](https://travis-ci.org/theAgileFactory/maf-dbmdl)
+
 # Desktop DBMDL
 
 [![Build Status](https://travis-ci.org/AblionGE/maf-dbmdl.svg?branch=master)](https://travis-ci.org/AblionGE/maf-dbmdl)
