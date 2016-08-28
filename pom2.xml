@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.agifac.maf</groupId>
 	<artifactId>maf-dbmdl</artifactId>
-	<version>13.0.1-SNAPSHOT</version>
+	<version>13.0.1</version>
 	<name>BizDock application database schema</name>
 	<description>This is the database schema builder for the BizDock application</description>
 	<packaging>pom</packaging>
