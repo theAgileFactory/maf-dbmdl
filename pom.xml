@@ -1,33 +1,35 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.agifac.maf</groupId>
 	<artifactId>maf-dbmdl</artifactId>
-	<version>12.1.2-SNAPSHOT</version>
-	<name>Component "maf-dbmdl", of scope "com.agifac.maf"</name>
-	<description>This is the component that create the database tables for the maf-desktop entities</description>
+	<version>15.0.0-SNAPSHOT</version>
+	<name>BizDock application database schema</name>
+	<description>This is the database schema builder for the BizDock application</description>
 	<packaging>pom</packaging>
-	<url>https://prod.the-agile-factory.net/site/${project.groupId}/${project.artifactId}-${project.version}</url>
-	<organization>
-		<name>The Agile Factory</name>
-		<url>http://www.the-agile-factory.com</url>
-	</organization>
+	<url>https://github.com/theAgileFactory</url>
 
-        <scm>
-                <connection>scm:git:https://github.com/theAgileFactory/maf-dbmdl.git</connection>
-                <developerConnection>scm:git:https://github.com/theAgileFactory/maf-dbmdl.git</developerConnection>
-                <url>scm:git:https://github.com/theAgileFactory/maf-dbmdl.git</url>
-          <tag>HEAD</tag>
-  </scm>
-	
-	<ciManagement>
-		<system>jenkins</system>
-		<url>https://prod.the-agile-factory.net/jenkins/</url>
-	</ciManagement>
-	
-	<issueManagement>
-		<system>Redmine</system>
-		<url>https://prod.the-agile-factory.net/redmine</url>
-	</issueManagement>
+	<licenses>
+		<license>
+			<name>GNU General Public License, version 2</name>
+			<url>http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:https://github.com/theAgileFactory/maf-dbmdl.git</connection>
+		<developerConnection>scm:git:https://github.com/theAgileFactory/maf-dbmdl.git</developerConnection>
+		<url>scm:git:https://github.com/theAgileFactory/maf-dbmdl.git</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>pycloux</id>
+			<name>Pierre-Yves Cloux</name>
+			<email>dev@pycloux.com</email>
+		</developer>
+	</developers>
 
 	<properties>
 		<!-- Global properties -->
@@ -49,20 +51,21 @@
 		<versions-maven-plugin.version>2.2</versions-maven-plugin.version>
 	</properties>
 
+	<pluginRepositories>
+		<pluginRepository>
+			<id>typesafe-plugin</id>
+			<url>http://repo.typesafe.com/typesafe/repo/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<distributionManagement>
 		<snapshotRepository>
-			<id>snapshots</id>
-			<url>https://prod.the-agile-factory.net/nexus/content/repositories/snapshots</url>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
-		<repository>
-			<id>releases</id>
-			<url>https://prod.the-agile-factory.net/nexus/content/repositories/releases</url>
-		</repository>
-		<site>
-			<id>site</id>
-			<name>site</name>
-			<url>scp://first/var/www/html/${project.groupId}/${project.artifactId}-${project.version}</url>
-		</site>
 	</distributionManagement>
 
 	<dependencies>
@@ -73,14 +76,14 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-		  <groupId>mysql</groupId>
-		  <artifactId>mysql-connector-java</artifactId>
-		  <version>${mysql-connector-java.version}</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java.version}</version>
 		</dependency>
 		<dependency>
-		  <groupId>org.mybatis</groupId>
-		  <artifactId>mybatis-migrations</artifactId>
-		  <version>${mybatis-migrations.version}</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-migrations</artifactId>
+			<version>${mybatis-migrations.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -102,8 +105,8 @@
 								<resource>
 									<directory> ${basedir}/src/main/resources </directory>
 									<excludes>
-										<excludes>.svn</excludes>
-										<excludes>**/.svn</excludes>
+										<excludes>.git</excludes>
+										<excludes>**/.git</excludes>
 									</excludes>
 								</resource>
 							</resources>
@@ -126,7 +129,7 @@
 								</resource>
 							</resources>
 						</configuration>
-					</execution>	
+					</execution>
 					<execution>
 						<id>copy-model</id>
 						<goals>
@@ -180,7 +183,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin> 
+			</plugin>
 
 
 			<plugin>
@@ -214,7 +217,7 @@
 								<descriptor> src/main/assembly/resources.xml </descriptor>
 							</descriptors>
 						</configuration>
-					</execution>	
+					</execution>
 					<execution>
 						<goals>
 							<goal>single</goal>
@@ -227,7 +230,7 @@
 								<descriptor> src/main/assembly/nonregressiontests.xml </descriptor>
 							</descriptors>
 						</configuration>
-					</execution>				
+					</execution>
 				</executions>
 			</plugin>
 
@@ -238,61 +241,68 @@
 				<configuration>
 					<repository>${basedir}/src/main/sql</repository>
 				</configuration>
-				<executions>
-				</executions>
 				<dependencies>
 					<dependency>
-					  <groupId>mysql</groupId>
-					  <artifactId>mysql-connector-java</artifactId>
-					  <version>${mysql-connector-java.version}</version>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql-connector-java.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
 
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>${maven-site-plugin.version}</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.maven.wagon</groupId>
-						<artifactId>wagon-ssh</artifactId>
-						<version>${wagon-ssh.version}</version>
-					</dependency>
-				</dependencies>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
 				<configuration>
-					<reportPlugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-project-info-reports-plugin</artifactId>
-							<version>${maven-project-info-reports-plugin.version}</version>
-							<configuration>
-								<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-								<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-							</configuration>
-							<reports>
-								<report>index</report>
-								<report>issue-tracking</report>
-								<report>summary</report>
-								<report>dependencies</report>
-								<report>scm</report>
-								<report>cim</report>
-								<report>distribution-management</report>
-							</reports>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>versions-maven-plugin</artifactId>
-							<version>${versions-maven-plugin.version}</version>
-							<reports>
-								<report>dependency-updates-report</report>
-								<report>plugin-updates-report</report>
-								<report>property-updates-report</report>
-							</reports>
-						</plugin>
-					</reportPlugins>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+			          <id>sign-artifacts</id>
+			          <phase>verify</phase>
+			          <goals>
+			            <goal>sign</goal>
+			          </goals>
+			        </execution>
+			    </executions>
+			</plugin>
+			
+			<plugin>
+		        <groupId>org.codehaus.mojo</groupId>
+		        <artifactId>versions-maven-plugin</artifactId>
+		        <version>2.2</version>
+		    </plugin>
+		    
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-antrun-plugin</artifactId>
+			    <version>1.7</version>
+			    <executions>
+			          <execution>
+			            <goals>
+			              <goal>run</goal>
+			            </goals>
+			            <phase>generate-sources</phase>
+			            <configuration>
+			              <target>
+			                <property name="buildtime" value="${maven.build.timestamp}" />
+			                <echo message="Writing project version string to ${resources.dir}/${version.filename} ..." />
+			                <echo file="${project.build.directory}/version.properties" message="${project.version}${line.separator}" />
+			              </target>
+			            </configuration>
+			          </execution>
+			        </executions>
+			  </plugin>
 		</plugins>
 	</build>
 </project>
