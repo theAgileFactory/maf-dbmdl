@@ -8,8 +8,8 @@ then
     exit
 fi
 
-export CURRENT_VERSION='1.0.0-SNAPSHOT'
+export CURRENT_VERSION='15.0.0'
 export VERSION_STR=`echo $CURRENT_VERSION | sed "s/-SNAPSHOT//g" | tr '.' '-'`
 
 # mvn -f migration-pom.xml migration:new -Dmigration.description=v${VERSION_STR}_$1 -Dmigration.env=deploy
-./migrate.sh new v${VERSION_STR}_$1 --path=../repo --env=deploy
+./migrate.sh new v${VERSION_STR}_$1 --path=../repo --env=development
