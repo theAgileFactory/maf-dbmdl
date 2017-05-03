@@ -1,6 +1,9 @@
 -- // v15-0-0_portfolio_entry_resource_plan_allocated_actor_details
 -- Migration SQL that makes the change goes here.
 
+ALTER TABLE `portfolio_entry_resource_plan_allocated_actor`
+ADD COLUMN `monthly_allocated` TINYINT(1);
+
 CREATE TABLE `portfolio_entry_resource_plan_allocated_actor_detail` (
   `id`                                               BIGINT(20) NOT NULL AUTO_INCREMENT,
   `portfolio_entry_resource_plan_allocated_actor_id` BIGINT(20) NOT NULL,
