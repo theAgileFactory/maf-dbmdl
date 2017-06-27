@@ -5,15 +5,15 @@ INSERT INTO `reporting_authorization` (`expression`, `type`, `deleted`, `last_up
 VALUES ('reporting.capacity_report', 0, 0, Now());
 
 INSERT INTO `reporting` (`deleted`, `last_update`, `reporting_category_id`, `reporting_authorization_id`, `name`, `description`, `is_public`, `is_active`, `is_standard`, `template`, `languages`, `formats`)
-VALUES (0, Now(), 3, (select id from reporting_authorization where expression = 'reporting.capacity_report'), 'reporting.capacity_report.name', 'reporting.capacity_report.description', 1, 1, 0, 'capacity_report', 'en,fr,de', 'PDF,EXCEL');
+VALUES (0, Now(), 4, (select id from reporting_authorization where expression = 'reporting.capacity_report'), 'reporting.capacity_report.name', 'reporting.capacity_report.description', 1, 1, 0, 'capacity_report', 'en,fr,de', 'PDF,EXCEL');
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.capacity_report.name', 'de', 'Capacity report');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.capacity_report.name', 'en', 'Capacity report');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.capacity_report.name', 'fr', 'Rapport de capacité');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.capacity_report.name', 'fr', 'Rapport de capacitÃ©');
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.capacity_report.description', 'de', 'Capacity report');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.capacity_report.description', 'en', 'Capacity report');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.capacity_report.description', 'fr', 'Rapport de capacité');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.capacity_report.description', 'fr', 'Rapport de capacitÃ©');
 
 INSERT INTO `custom_attribute_definition` (`object_type`, `configuration`, `order`, `attribute_type`, `uuid`, `name`, `description`, `deleted`, `last_update`, `is_displayed`, `conditional_rule`)
 VALUES ('utils.form.ReportingParamsFormData:capacity_report', 0x636F6E73747261696E742E72657175697265643D74727565, 1, 'DATE', 'date_report_parameter', 'report.capacity_report.date.name', '', 0, Now(), 0, NULL);
