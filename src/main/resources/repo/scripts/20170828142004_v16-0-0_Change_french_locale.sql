@@ -5,11 +5,9 @@ UPDATE i18n_messages
 SET language = 'fr-CH'
 WHERE language = 'fr';
 
-
 -- //@UNDO
 -- SQL to undo the change goes here.
 
 UPDATE i18n_messages
 SET language = 'fr'
 WHERE language = 'fr-CH';
-
