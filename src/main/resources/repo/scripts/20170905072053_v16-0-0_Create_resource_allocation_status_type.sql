@@ -56,24 +56,27 @@ ADD CONSTRAINT perpac_actor_fk FOREIGN KEY (last_status_type_update_actor_id) RE
 
 UPDATE portfolio_entry_resource_plan_allocated_org_unit
 SET portfolio_entry_resource_plan_allocation_status_type_id =
-CASE
-WHEN is_confirmed = 0 THEN (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'PENDING')
-WHEN is_confirmed = 1 THEN (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'CONFIRMED')
-END;
+IF(
+    is_confirmed = 1,
+    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'CONFIRMED'),
+    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'PENDING')
+);
 
 UPDATE portfolio_entry_resource_plan_allocated_actor
 SET portfolio_entry_resource_plan_allocation_status_type_id =
-CASE
-WHEN is_confirmed = 0 THEN (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'PENDING')
-WHEN is_confirmed = 1 THEN (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'CONFIRMED')
-END;
+IF(
+    is_confirmed = 1,
+    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'CONFIRMED'),
+    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'PENDING')
+);
 
 UPDATE portfolio_entry_resource_plan_allocated_competency
 SET portfolio_entry_resource_plan_allocation_status_type_id =
-CASE
-WHEN is_confirmed = 0 THEN (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'PENDING')
-WHEN is_confirmed = 1 THEN (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'CONFIRMED')
-END;
+IF(
+    is_confirmed = 1,
+    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'CONFIRMED'),
+    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'PENDING')
+);
 
 ALTER TABLE `portfolio_entry_resource_plan_allocated_actor` DROP is_confirmed;
 ALTER TABLE `portfolio_entry_resource_plan_allocated_org_unit` DROP is_confirmed;
