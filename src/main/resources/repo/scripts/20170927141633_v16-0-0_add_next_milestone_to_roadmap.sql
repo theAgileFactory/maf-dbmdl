@@ -13,13 +13,12 @@ update
     left join life_cycle_instance lci on pe.active_life_cycle_instance_id = lci.id
     left join life_cycle_instance_planning lcip on lci.id = lcip.life_cycle_instance_id and lcip.deleted = 0 and lcip.is_frozen = 0
     left join planned_life_cycle_milestone_instance plcmi on lcip.id = plcmi.life_cycle_instance_planning_id and plcmi.deleted = 0 and plcmi.id = (
-    select  min(id)
-    from    planned_life_cycle_milestone_instance
-    where   life_cycle_instance_planning_id = lcip.id
-  )
-    left join life_cycle_milestone lcm on plcmi.life_cycle_milestone_id = lcm.id and lcm.deleted = 0 and lcm.is_active = 1
+      select  min(id)
+      from    planned_life_cycle_milestone_instance
+      where   life_cycle_instance_planning_id = lcip.id
+    )
 set
-  pe.next_planned_life_cycle_milestone_instance_id = lcm.id;
+  pe.next_planned_life_cycle_milestone_instance_id = plcmi.id;
 
 -- //@UNDO
 -- SQL to undo the change goes here.
