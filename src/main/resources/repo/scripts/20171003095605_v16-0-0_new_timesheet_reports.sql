@@ -7,33 +7,33 @@ INSERT INTO `reporting_authorization` (`expression`, `type`, `deleted`, `last_up
 ('reporting.timesheet_per_project', 0, 0, Now());
 
 INSERT INTO `reporting` (`deleted`, `last_update`, `reporting_category_id`, `reporting_authorization_id`, `name`, `description`, `is_public`, `is_active`, `is_standard`, `template`, `languages`, `formats`, `default_format`) VALUES
-(0, Now(), (select id from reporting_category where name = 'reporting_category.default.name'), (select id from reporting_authorization where expression = 'reporting.timesheet_per_type'), 'reporting.timesheet_per_type.name', 'reporting.timesheet_per_type.description', 1, 0, 1, 'timesheet_per_type', 'fr-CH,en,de', 'EXCEL,PDF', 'EXCEL'),
-(0, Now(), (select id from reporting_category where name = 'reporting_category.default.name'), (select id from reporting_authorization where expression = 'reporting.timesheet_per_actor'), 'reporting.timesheet_per_actor.name', 'reporting.timesheet_per_actor.description', 1, 0, 1, 'timesheet_per_actor', 'fr-CH,en,de', 'EXCEL,PDF', 'EXCEL'),
-(0, Now(), (select id from reporting_category where name = 'reporting_category.default.name'), (select id from reporting_authorization where expression = 'reporting.timesheet_per_project'), 'reporting.timesheet_per_project.name', 'reporting.timesheet_per_project.description', 1, 0, 1, 'timesheet_per_project', 'fr-CH,en,de', 'EXCEL,PDF', 'EXCEL');
+(0, Now(), (select id from reporting_category where name = 'reporting_category.default.name'), (select id from reporting_authorization where expression = 'reporting.timesheet_per_type'), 'reporting.timesheet_per_type.name', 'reporting.timesheet_per_type.description', 1, 0, 1, 'timesheet_per_type', 'fr,en,de', 'EXCEL,PDF', 'EXCEL'),
+(0, Now(), (select id from reporting_category where name = 'reporting_category.default.name'), (select id from reporting_authorization where expression = 'reporting.timesheet_per_actor'), 'reporting.timesheet_per_actor.name', 'reporting.timesheet_per_actor.description', 1, 0, 1, 'timesheet_per_actor', 'fr,en,de', 'EXCEL,PDF', 'EXCEL'),
+(0, Now(), (select id from reporting_category where name = 'reporting_category.default.name'), (select id from reporting_authorization where expression = 'reporting.timesheet_per_project'), 'reporting.timesheet_per_project.name', 'reporting.timesheet_per_project.description', 1, 0, 1, 'timesheet_per_project', 'fr,en,de', 'EXCEL,PDF', 'EXCEL');
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_type.name', 'de', 'Timesheet-Einträge nach Aktivitäten');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_type.name', 'en', 'Timesheet entries by activity type');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_type.name', 'fr-CH', 'Entrées de feuilles de temps par type d''activité');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_type.name', 'fr', 'Entrées de feuilles de temps par type d''activité');
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_type.description', 'de', 'Sämtliche Timesheet-Einträge in diesem Zeitraum. Zusammengefasst nach Mitarbeiter und Aktivitättyp.');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_type.description', 'en', 'List of all timesheet entries for a given period. The entries are grouped by activity type and employee.');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_type.description', 'fr-CH', 'Liste de toutes les entrées de feuilles de temps pour une période donnée. Les entrées sont groupées par type d''activité et par employé.');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_type.description', 'fr', 'Liste de toutes les entrées de feuilles de temps pour une période donnée. Les entrées sont groupées par type d''activité et par employé.');
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_actor.name', 'de', 'Timesheet-Einträge nach Mitarbeiter');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_actor.name', 'en', 'Timesheet entries by employee');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_actor.name', 'fr-CH', 'Entrées de feuilles de temps par employé');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_actor.name', 'fr', 'Entrées de feuilles de temps par employé');
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_actor.description', 'de', 'Sämtliche Timesheet-Einträge in diesem Projekt. Zusammengefasst nach Mitarbeiter.');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_actor.description', 'en', 'List of all timesheet entries for a given initiative. The entries are grouped by employee.');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_actor.description', 'fr-CH', 'Liste de toutes les entrées de feuilles de temps pour une initiative donnée. Les entrées sont groupées par employé.');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_actor.description', 'fr', 'Liste de toutes les entrées de feuilles de temps pour une initiative donnée. Les entrées sont groupées par employé.');
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_project.name', 'de', 'Timesheet-Einträge nach Initiative');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_project.name', 'en', 'Timesheet entries by initiative');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_project.name', 'fr-CH', 'Entrées de feuilles de temps par initiative');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_project.name', 'fr', 'Entrées de feuilles de temps par initiative');
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_project.description', 'de', 'Sämtliche Timesheet-Einträge in diesem Zeitraum. Zusammengefasst nach Initiative und Mitarbeiter.');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_project.description', 'en', 'List of all timesheet entries for a given period. The entries are grouped by initiative and employee.');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_project.description', 'fr-CH', 'Liste de toutes les entrées de feuilles de temps pour une période donnée. Les entrées sont groupées par initiative et employé.');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('reporting.timesheet_per_project.description', 'fr', 'Liste de toutes les entrées de feuilles de temps pour une période donnée. Les entrées sont groupées par initiative et employé.');
 
 INSERT INTO `custom_attribute_definition` (`object_type`, `configuration`, `order`, `attribute_type`, `uuid`, `name`, `description`, `deleted`, `last_update`, `is_displayed`, `conditional_rule`)
 VALUES ('utils.form.ReportingParamsFormData:timesheet_per_type', 0x636F6E73747261696E742E72657175697265643D74727565, 1, 'DATE', 'TS_TYPE_START_DATE', 'report.timesheet.start_date.name', '', 0, Now(), 0, NULL);
@@ -58,11 +58,11 @@ VALUES ('utils.form.ReportingParamsFormData:timesheet_per_project', 0x636F6E7374
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.timesheet.start_date.name', 'de', 'Startdatum');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.timesheet.start_date.name', 'en', 'Start date');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.timesheet.start_date.name', 'fr-CH', 'Date de début');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.timesheet.start_date.name', 'fr', 'Date de début');
 
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.timesheet.end_date.name', 'de', 'Enddatum');
 INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.timesheet.end_date.name', 'en', 'End date');
-INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.timesheet.end_date.name', 'fr-CH', 'Date de fin');
+INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.timesheet.end_date.name', 'fr', 'Date de fin');
 
 -- //@UNDO
 -- SQL to undo the change goes here.
