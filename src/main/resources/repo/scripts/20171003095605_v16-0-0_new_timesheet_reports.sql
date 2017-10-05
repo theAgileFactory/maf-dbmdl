@@ -79,3 +79,5 @@ WHERE template IN ('timesheet_per_type', 'timesheet_per_actor', 'timesheet_per_p
 DELETE FROM reporting_authorization
 WHERE expression IN ('reporting.timesheet_per_type', 'reporting.timesheet_per_actor', 'reporting.timesheet_per_project');
 
+DELETE FROM i18n_messages
+WHERE `key` IN ('report.timesheet.start_date.name', 'report.timesheet.end_date.name');
