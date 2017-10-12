@@ -59,7 +59,7 @@ SET portfolio_entry_resource_plan_allocation_status_type_id =
 IF(
     is_confirmed = 1,
     (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'CONFIRMED'),
-    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'PENDING')
+    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'DRAFT')
 );
 
 UPDATE portfolio_entry_resource_plan_allocated_actor
@@ -67,7 +67,7 @@ SET portfolio_entry_resource_plan_allocation_status_type_id =
 IF(
     is_confirmed = 1,
     (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'CONFIRMED'),
-    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'PENDING')
+    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'DRAFT')
 );
 
 UPDATE portfolio_entry_resource_plan_allocated_competency
@@ -75,7 +75,7 @@ SET portfolio_entry_resource_plan_allocation_status_type_id =
 IF(
     is_confirmed = 1,
     (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'CONFIRMED'),
-    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'PENDING')
+    (select id from portfolio_entry_resource_plan_allocation_status_type where status = 'DRAFT')
 );
 
 ALTER TABLE `portfolio_entry_resource_plan_allocated_actor` DROP is_confirmed;
