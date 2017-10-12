@@ -36,6 +36,17 @@ VALUES
 ALTER TABLE reporting
 ADD COLUMN default_format VARCHAR(256);
 
+-- Add permission for initiative managers to confirm allocations
+
+INSERT INTO system_permission (name, description, deleted, selectable, last_update)
+VALUES (
+  'PORTFOLIO_ENTRY_CONFIRM_ALLOCATIONS_AS_MANAGER_PERMISSION',
+  'permission.portfolio_entry_confirm_allocations_as_manager_permission.description',
+  0,
+  1,
+  NOW()
+);
+
 -- //@UNDO
 -- SQL to undo the change goes here.
 
@@ -53,3 +64,6 @@ WHERE uuid = 'RESOURCES_WEEK_DAYS_ALLOCATION_PREFERENCE';
 
 ALTER TABLE reporting
 DROP COLUMN default_format ;
+
+DELETE FROM system_permission
+WHERE name = 'PORTFOLIO_ENTRY_CONFIRM_ALLOCATIONS_AS_MANAGER_PERMISSION';
