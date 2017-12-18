@@ -34,7 +34,8 @@ INSERT INTO single_item_custom_attribute_value (object_type, object_id, deleted,
                                                                                                WHERE name =
                                                                                                      'preference.governance_milestone_display_preference.long.name'));
 
-
+ALTER TABLE planned_life_cycle_milestone_instance ADD COLUMN updated_by_id BIGINT(20) AFTER last_update;
+ALTER TABLE planned_life_cycle_milestone_instance ADD FOREIGN KEY fk_plcmi_updated_by (updated_by_id) REFERENCES actor (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- //@UNDO
 -- SQL to undo the change goes here.
@@ -59,3 +60,5 @@ WHERE custom_attribute_definition_id = (SELECT id
 DELETE FROM custom_attribute_definition
 WHERE uuid = 'GOVERNANCE_MILESTONE_DISPLAY_PREFERENCE';
 
+ALTER TABLE planned_life_cycle_milestone_instance DROP FOREIGN KEY fk_plcmi_updated_by;
+ALTER TABLE planned_life_cycle_milestone_instance DROP COLUMN updated_by_id;
