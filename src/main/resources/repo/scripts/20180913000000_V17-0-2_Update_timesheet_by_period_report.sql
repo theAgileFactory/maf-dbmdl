@@ -13,6 +13,3 @@ INSERT INTO `i18n_messages` (`key`, `language`, `value`) VALUES ('report.timeshe
 
 DELETE FROM `i18n_messages` where `key` = 'report.timesheet_period.group_by_month.name';
 DELETE FROM `custom_attribute_definition` WHERE `uuid` = 'GROUP_BY_MONTH';
-
-
-select * from custom_attribute_definition where object_type = 'utils.form.ReportingParamsFormData:timesheet_period';
