@@ -205,3 +205,40 @@ from kpi_definition kpi
 where uid = 'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL';
 
 -- //@UNDO
+
+delete from kpi_data where kpi_value_definition_id in
+  (select id from kpi_color_rule where kpi_definition_id in (select id from kpi_definition where uid in (
+    'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL',
+    'KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL',
+    'KPI_PORTFOLIO_ENTRY_BUDGET_INTERNAL_EXTERNAL',
+    'KPI_PORTFOLIO_ENTRY_ACTUALS_INTERNAL_EXTERNAL'
+)));
+
+delete from kpi_color_rule where kpi_definition_id in (select id from kpi_definition where uid in (
+  'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL',
+  'KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL',
+  'KPI_PORTFOLIO_ENTRY_BUDGET_INTERNAL_EXTERNAL',
+  'KPI_PORTFOLIO_ENTRY_ACTUALS_INTERNAL_EXTERNAL'
+));
+
+delete from kpi_definition_has_system_permission where kpi_definition_id in (select id from kpi_definition where uid in (
+  'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL',
+  'KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL',
+  'KPI_PORTFOLIO_ENTRY_BUDGET_INTERNAL_EXTERNAL',
+  'KPI_PORTFOLIO_ENTRY_ACTUALS_INTERNAL_EXTERNAL'
+));
+
+delete from kpi_definition where uid in (
+  'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL',
+  'KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL',
+  'KPI_PORTFOLIO_ENTRY_BUDGET_INTERNAL_EXTERNAL',
+  'KPI_PORTFOLIO_ENTRY_ACTUALS_INTERNAL_EXTERNAL'
+);
+
+delete from kpi_value_definition where
+  name like 'kpi.pe_deviation_external.%' ||
+  name like 'kpi.pe_deviation_internal.%' ||
+  name like 'kpi.pe_budget_internal.%' ||
+  name like 'kpi.pe_actuals_internal.%';
+
+
