@@ -49,10 +49,8 @@ insert into kpi_definition_has_system_permission
     'PORTFOLIO_ENTRY_VIEW_FINANCIAL_INFO_AS_STAKEHOLDER_PERMISSION'
   );
 
-insert into kpi_color_rule (deleted, last_update, `order`, rule, css_color, kpi_definition_id)
-select 0, now(), 1, 'true;', 'primary', kpi.id
-from kpi_definition kpi
-where uid = 'KPI_PORTFOLIO_ENTRY_ACTUALS_INTERNAL_EXTERNAL';
+INSERT INTO `kpi_color_rule` (`last_update`, `order`, `rule`, `css_color`, `render_label`, `kpi_definition_id`)
+	VALUES (NOW(), '0', 'true;', 'primary', NULL, (SELECT id FROM kpi_definition WHERE uid='KPI_PORTFOLIO_ENTRY_ACTUALS_INTERNAL_EXTERNAL' LIMIT 1));
 
 -- Create Budget Internal External KPI
 insert into kpi_value_definition (deleted, last_update, name, render_type, render_pattern, is_trend_displayed, is_displayed)
@@ -84,10 +82,8 @@ insert into kpi_definition_has_system_permission
     'PORTFOLIO_ENTRY_VIEW_FINANCIAL_INFO_AS_STAKEHOLDER_PERMISSION'
   );
 
-insert into kpi_color_rule (deleted, last_update, `order`, rule, css_color, kpi_definition_id)
-select 0, now(), 1, 'true;', 'primary', kpi.id
-from kpi_definition kpi
-where uid = 'KPI_PORTFOLIO_ENTRY_BUDGET_INTERNAL_EXTERNAL';
+INSERT INTO `kpi_color_rule` (`last_update`, `order`, `rule`, `css_color`, `render_label`, `kpi_definition_id`)
+	VALUES (NOW(), '0', 'true;', 'primary', NULL, (SELECT id FROM kpi_definition WHERE uid='KPI_PORTFOLIO_ENTRY_BUDGET_INTERNAL_EXTERNAL' LIMIT 1));
 
 -- Create Internal deviation KPI
 insert into kpi_value_definition (deleted, last_update, name, render_type, render_pattern, is_trend_displayed, is_displayed)
@@ -119,33 +115,14 @@ insert into kpi_definition_has_system_permission
     'PORTFOLIO_ENTRY_VIEW_FINANCIAL_INFO_AS_STAKEHOLDER_PERMISSION'
   );
 
-insert into kpi_color_rule (deleted, last_update, `order`, rule, css_color, kpi_definition_id)
-select 0, now(), 1, 'if (main != null && main <= 0) {
-    true;
-} else {
-    false;
-}', 'success', kpi.id
-from kpi_definition kpi
-where uid = 'KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL';
+INSERT INTO `kpi_color_rule` (`last_update`, `order`, `rule`, `css_color`, `render_label`, `kpi_definition_id`)
+	VALUES (NOW(), '0', 'if (main != null && main <= 0) { true; } else { false; }', 'success', NULL, (SELECT id FROM kpi_definition WHERE uid='KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL' LIMIT 1));
 
-insert into kpi_color_rule (deleted, last_update, `order`, rule, css_color, kpi_definition_id)
-select 0, now(), 1, 'if (main != null && main <= 10) {
-    true;
-} else {
-    false;
-}', 'warning', kpi.id
-from kpi_definition kpi
-where uid = 'KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL';
+INSERT INTO `kpi_color_rule` (`last_update`, `order`, `rule`, `css_color`, `render_label`, `kpi_definition_id`)
+	VALUES (NOW(), '0', 'if (main != null && main <= 10) { true; } else { false; }', 'warning', NULL, (SELECT id FROM kpi_definition WHERE uid='KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL' LIMIT 1));
 
-insert into kpi_color_rule (deleted, last_update, `order`, rule, css_color, kpi_definition_id)
-select 0, now(), 1, 'if (main != null) {
-    true;
-} else {
-    false;
-}', 'danger', kpi.id
-from kpi_definition kpi
-where uid = 'KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL';
-
+INSERT INTO `kpi_color_rule` (`last_update`, `order`, `rule`, `css_color`, `render_label`, `kpi_definition_id`)
+	VALUES (NOW(), '0', 'if (main != null) { true; } else { false; }', 'danger', NULL, (SELECT id FROM kpi_definition WHERE uid='KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL' LIMIT 1));
 
 -- Create External deviation KPI
 insert into kpi_value_definition (deleted, last_update, name, render_type, render_pattern, is_trend_displayed, is_displayed)
@@ -177,44 +154,24 @@ insert into kpi_definition_has_system_permission
     'PORTFOLIO_ENTRY_VIEW_FINANCIAL_INFO_AS_STAKEHOLDER_PERMISSION'
   );
 
-insert into kpi_color_rule (deleted, last_update, `order`, rule, css_color, kpi_definition_id)
-select 0, now(), 1, 'if (main != null && main <= 0) {
-    true;
-} else {
-    false;
-}', 'success', kpi.id
-from kpi_definition kpi
-where uid = 'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL';
-
-insert into kpi_color_rule (deleted, last_update, `order`, rule, css_color, kpi_definition_id)
-select 0, now(), 1, 'if (main != null && main <= 10) {
-    true;
-} else {
-    false;
-}', 'warning', kpi.id
-from kpi_definition kpi
-where uid = 'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL';
-
-insert into kpi_color_rule (deleted, last_update, `order`, rule, css_color, kpi_definition_id)
-select 0, now(), 1, 'if (main != null) {
-    true;
-} else {
-    false;
-}', 'danger', kpi.id
-from kpi_definition kpi
-where uid = 'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL';
+INSERT INTO `kpi_color_rule` (`last_update`, `order`, `rule`, `css_color`, `render_label`, `kpi_definition_id`)
+	VALUES (NOW(), '0', 'if (main != null && main <= 0) { true; } else { false; }', 'success', NULL, (SELECT id FROM kpi_definition WHERE uid='KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL' LIMIT 1));
+INSERT INTO `kpi_color_rule` (`last_update`, `order`, `rule`, `css_color`, `render_label`, `kpi_definition_id`)
+	VALUES (NOW(), '0', 'if (main != null) { true; } else { false; }', 'warning', NULL, (SELECT id FROM kpi_definition WHERE uid='KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL' LIMIT 1));
+INSERT INTO `kpi_color_rule` (`last_update`, `order`, `rule`, `css_color`, `render_label`, `kpi_definition_id`)
+	VALUES (NOW(), '0', 'if (main != null && main <= 10) { true; } else { false; }', 'danger', NULL, (SELECT id FROM kpi_definition WHERE uid='KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL' LIMIT 1));
 
 -- //@UNDO
 
 delete from kpi_data where kpi_value_definition_id in
-  (select id from kpi_color_rule where kpi_definition_id in (select id from kpi_definition where uid in (
+  (select id from `kpi_color_rule` where kpi_definition_id in (select id from kpi_definition where uid in (
     'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL',
     'KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL',
     'KPI_PORTFOLIO_ENTRY_BUDGET_INTERNAL_EXTERNAL',
     'KPI_PORTFOLIO_ENTRY_ACTUALS_INTERNAL_EXTERNAL'
 )));
 
-delete from kpi_color_rule where kpi_definition_id in (select id from kpi_definition where uid in (
+delete from `kpi_color_rule` where kpi_definition_id in (select id from kpi_definition where uid in (
   'KPI_PORTFOLIO_ENTRY_DEVIATION_EXTERNAL',
   'KPI_PORTFOLIO_ENTRY_DEVIATION_INTERNAL',
   'KPI_PORTFOLIO_ENTRY_BUDGET_INTERNAL_EXTERNAL',
