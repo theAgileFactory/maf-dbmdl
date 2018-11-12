@@ -70,6 +70,12 @@ alter table portfolio_entry_event add column created_by VARCHAR(256);
 alter table portfolio_entry_event add column updated_by VARCHAR(256);
 alter table portfolio_entry_event modify column last_update datetime;
 
+-- timesheet activities
+alter table timesheet_activity_allocated_actor add column creation_date datetime;
+alter table timesheet_activity_allocated_actor add column created_by VARCHAR(256);
+alter table timesheet_activity_allocated_actor add column updated_by VARCHAR(256);
+alter table timesheet_activity_allocated_actor modify column last_update datetime;
+
 -- //@UNDO
 -- SQL to undo the change goes here.
 
