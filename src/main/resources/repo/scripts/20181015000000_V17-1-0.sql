@@ -13,7 +13,7 @@ ALTER TABLE portfolio_entry_dependency ADD COLUMN creation_date datetime;
 ALTER TABLE portfolio_entry_dependency ADD COLUMN created_by VARCHAR(256);
 ALTER TABLE portfolio_entry_dependency ADD COLUMN last_update datetime;
 ALTER TABLE portfolio_entry_dependency add column updated_by VARCHAR(256);
-alter table portfolio_entry_dependency add column deleted tinyint(1);
+alter table portfolio_entry_dependency add column deleted tinyint(1) not null default 0;
 
 -- Portfolio entry budget lines
 ALTER TABLE portfolio_entry_budget_line ADD COLUMN creation_date datetime;
