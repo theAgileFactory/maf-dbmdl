@@ -76,6 +76,21 @@ alter table timesheet_activity_allocated_actor add column created_by VARCHAR(256
 alter table timesheet_activity_allocated_actor add column updated_by VARCHAR(256);
 alter table timesheet_activity_allocated_actor modify column last_update datetime;
 
+-- Add allocation status translations in DB
+insert into i18n_messages (`key`, `language`, `value`) values
+('object.allocated_resource.status_type.DRAFT.label', 'fr', 'Brouillon'),
+('object.allocated_resource.status_type.DRAFT.label', 'en', 'Draft'),
+('object.allocated_resource.status_type.DRAFT.label', 'de', 'Entwurf'),
+('object.allocated_resource.status_type.PENDING.label', 'fr', 'En attente'),
+('object.allocated_resource.status_type.PENDING.label', 'en', 'Pending'),
+('object.allocated_resource.status_type.PENDING.label', 'de', 'Anstehend'),
+('object.allocated_resource.status_type.CONFIRMED.label', 'fr', 'Confirmé'),
+('object.allocated_resource.status_type.CONFIRMED.label', 'en', 'Confirmed'),
+('object.allocated_resource.status_type.CONFIRMED.label', 'de', 'Bestätigt'),
+('object.allocated_resource.status_type.REFUSED.label', 'fr', 'Refusé'),
+('object.allocated_resource.status_type.REFUSED.label', 'en', 'Refused'),
+('object.allocated_resource.status_type.REFUSED.label', 'de', 'Abgelehnt');
+
 -- //@UNDO
 -- SQL to undo the change goes here.
 
