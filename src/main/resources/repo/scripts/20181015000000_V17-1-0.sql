@@ -91,6 +91,18 @@ insert into i18n_messages (`key`, `language`, `value`) values
 ('object.allocated_resource.status_type.REFUSED.label', 'en', 'Refused'),
 ('object.allocated_resource.status_type.REFUSED.label', 'de', 'Abgelehnt');
 
+insert into custom_attribute_definition (object_type, configuration, `order`, attribute_type, uuid, name, deleted, last_update, is_displayed) values
+('utils.form.ReportingParamsFormData:timesheet_per_actor', 'default.value = false', 4, 'BOOLEAN', 'TS_DISPLAY_IN_DAYS', 'report.timesheet.display_in_days.name', false, NOW(), false),
+('utils.form.ReportingParamsFormData:timesheet_per_project', 'default.value = false', 3, 'BOOLEAN', 'TS_DISPLAY_IN_DAYS', 'report.timesheet.display_in_days.name', false, NOW(), false),
+('utils.form.ReportingParamsFormData:timesheet_per_type', 'default.value = false', 3, 'BOOLEAN', 'TS_DISPLAY_IN_DAYS', 'report.timesheet.display_in_days.name', false, NOW(), false),
+('utils.form.ReportingParamsFormData:timesheet_period', 'default.value = false', 4, 'BOOLEAN', 'TS_DISPLAY_IN_DAYS', 'report.timesheet.display_in_days.name', false, NOW(), false),
+('utils.form.ReportingParamsFormData:timesheet_project', 'default.value = false', 2, 'BOOLEAN', 'TS_DISPLAY_IN_DAYS', 'report.timesheet.display_in_days.name', false, NOW(), false);
+
+insert into i18n_messages (`key`, language, value) values
+('report.timesheet.display_in_days.name', 'en', 'Display in days'),
+('report.timesheet.display_in_days.name', 'fr', 'Afficher en jours'),
+('report.timesheet.display_in_days.name', 'de', 'Anzeige in Tagen');
+
 -- //@UNDO
 -- SQL to undo the change goes here.
 
