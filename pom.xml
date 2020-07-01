@@ -43,7 +43,7 @@
 		<java.target>1.8</java.target>
 		<!-- Dependencies properties -->
 		<junit.version>4.10</junit.version>
-		<mysql-connector-java.version>5.1.32</mysql-connector-java.version>
+		<mysql-connector-java.version>8.0.16</mysql-connector-java.version>
 		<mybatis-migrations.version>3.2.0</mybatis-migrations.version>
 		<!-- Plugin properties -->
 		<maven-resources-plugin.version>2.7</maven-resources-plugin.version>
