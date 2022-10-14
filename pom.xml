@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sword-group.bizdock.dbmdl</groupId>
 	<artifactId>maf-dbmdl</artifactId>
-	<version>17.2.5-SNAPSHOT</version>
+	<version>17.3.0</version>
 	<name>BizDock application database schema</name>
 	<description>This is the database schema builder for the BizDock application</description>
 	<packaging>pom</packaging>
@@ -59,7 +59,7 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>typesafe-plugin</id>
-			<url>http://repo.typesafe.com/typesafe/repo/</url>
+			<url>https://repo.typesafe.com/typesafe/repo/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
